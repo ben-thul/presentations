@@ -1,0 +1,2 @@
+get-eventlog -newest 10 -logname application | where {$_.EntryType -like '*Audit*'} | sort TimeGenerated | format-list
+get-eventlog -newest 10 -logname application | where {$_.EntryType -like '*Audit*'} | select Index, InstanceId, EntryType, Source, TimeGenerated, TimeWritten | sort TimeGenerated | format-list

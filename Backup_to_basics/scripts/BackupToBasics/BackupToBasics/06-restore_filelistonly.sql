@@ -1,0 +1,1 @@
+restore filelistonly from disk = 'c:\temp\AdventureWorks2014_FULL.bak'

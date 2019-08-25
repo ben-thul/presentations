@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 12.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "HierarchicalQueries", "HierarchicalQueries.ssmssqlproj", "{F8EC9D1B-6D4C-41E4-87A1-25AAE73D2BE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA642455-21D7-49BD-8F7C-C26088979C11}.Default|Default.ActiveCfg = Default
+		{F8EC9D1B-6D4C-41E4-87A1-25AAE73D2BE7}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

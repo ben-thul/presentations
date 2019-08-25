@@ -1,0 +1,1 @@
+restore headeronly from disk = 'c:\temp\AdventureWorks2014_FULL.bak'

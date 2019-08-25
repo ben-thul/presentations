@@ -1,0 +1,1 @@
+Employee/manager relationships, family trees, and the like are all hierarchical data. In this session, we'll look at a common way to represent such relationships, common methods of querying them, and how we can leverage the hierarchyid datatype to make queries go a lot easier and faster!
