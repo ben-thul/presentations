@@ -145,6 +145,7 @@ as
 go
 
 set statistics io, time on;
+set statistics xml on;
 go
 select * 
 from dbo.vw_EmployeeHierarchyWide

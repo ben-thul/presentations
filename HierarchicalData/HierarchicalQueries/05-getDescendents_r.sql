@@ -33,7 +33,7 @@ return
 	select EmployeeID, ManagerID, employeedata, [level]
 	from descendants
 go
-set statistics io, time on;
+set statistics io, time, xml on;
 go
 select *
 from dbo.getDescendants_r(12345);

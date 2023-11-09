@@ -45,7 +45,7 @@ return
 	where EmployeeID = @employeeID
 
 go
-set statistics io, time on;
+set statistics io, time, xml on;
 go
 select *
 from dbo.getAncestors_j(12345);

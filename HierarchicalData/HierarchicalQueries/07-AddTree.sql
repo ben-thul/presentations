@@ -20,4 +20,15 @@ update e
 set [tree] = [h]
 from cte as c
 join dbo.EmployeeHierarchyWide as e
-	on c.EmployeeID = e.EmployeeID
+	on c.EmployeeID = e.EmployeeID;
+go
+alter table dbo.EmployeeHierarchyWide add [level] as [tree].GetLevel() persisted
+create unique index [UIX_EmployeeHierarchyWide__tree] on dbo.EmployeeHierarchyWide (tree);
+create unique index [UIX_EmployeeHierarchyWide__level_tree] on dbo.EmployeeHierarchyWide (level, tree);
+
+alter table dbo.EmployeeHierarchyWide add [ManagerTree] as case 
+	when [ManagerID] is null then cast(null as hierarchyid) 
+	else [tree].GetAncestor(1) end persisted
+create index [IX_EmployeeHierarchyWide__ManagerTree] on dbo.EmployeeHierarchyWide (ManagerTree);
+alter table dbo.EmployeeHierarchyWide add constraint [FK_EmployeeHierarchyWide__ManagerTree] 
+	foreign key ([ManagerTree]) references dbo.EmployeeHierarchyWide ([tree]);

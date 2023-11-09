@@ -32,7 +32,7 @@ return
 	select EmployeeID, ManagerID, employeedata, [level]
 	from ancestors
 go
-set statistics io, time on;
+set statistics io, time, xml on;
 go
 select *
 from dbo.getAncestors_r(12345)

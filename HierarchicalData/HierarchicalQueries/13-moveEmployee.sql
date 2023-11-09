@@ -16,31 +16,28 @@ as
 begin
 	set nocount on;
 
-	declare @newManagerTree hierarchyid, @oldTree hierarchyid;
+	declare @newManagerTree hierarchyid, @Tree hierarchyid;
 	set @newManagerTree = (
 		select tree from dbo.EmployeeHierarchyWide
 		where EmployeeID = @newManagerID
 	);
 
-	set @oldTree = (
+	set @Tree = (
 		select tree
 		from dbo.EmployeeHierarchyWide
 		where EmployeeID = @employeeID
 	);
 
-	if (@oldTree is not null and @newManagerID is not null)
+	if (@Tree is not null and @newManagerID is not null)
 	begin
 
-		begin tran
-
-			update dbo.EmployeeHierarchyWide
-			set ManagerID = @newManagerID
-			where EmployeeID = @employeeID;
+		begin tran;
 
 			with cte as (
-				select tree, tree.GetReparentedValue(@oldTree.GetAncestor(1), @newManagerTree) as newTree
+				select tree, 
+					newTree = tree.GetReparentedValue(@Tree.GetAncestor(1), @newManagerTree)
 				from dbo.EmployeeHierarchyWide
-				where tree.IsDescendantOf(@oldTree) = 1
+				where tree.IsDescendantOf(@Tree) = 1
 			)
 
 			update cte

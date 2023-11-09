@@ -24,11 +24,13 @@ as return
 	where [e].[EmployeeID] = @employeeID
 go
 
-set statistics io on;
+set statistics io, time, xml on;
 go
 declare @employeeid int = 12345;
+
 select tree.ToString()
 from dbo.EmployeeHierarchyWide
 where EmployeeID = @employeeid;
+
 select *
 from dbo.getSiblings(@employeeid, 2);

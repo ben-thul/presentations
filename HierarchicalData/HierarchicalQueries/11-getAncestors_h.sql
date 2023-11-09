@@ -22,7 +22,7 @@ return
 	where [child].EmployeeID = @EmployeeID;
 go
 
-set statistics io, time on;
+set statistics io, time, xml on;
 go
 select *
 from dbo.getAncestors_h(12345)

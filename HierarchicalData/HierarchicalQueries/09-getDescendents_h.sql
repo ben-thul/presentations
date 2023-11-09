@@ -21,7 +21,7 @@ return
 	where [parent].EmployeeID = @EmployeeID;
 
 go
-set statistics io, time on;
+set statistics io, time, xml on;
 go
 select *
 from dbo.getDescendants_h(12345);
