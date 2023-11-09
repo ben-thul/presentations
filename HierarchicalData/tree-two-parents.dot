@@ -1,0 +1,19 @@
+digraph {
+    /*splines=ortho;*/
+    node [shape=box];
+
+    subgraph {
+        node [color="red", shape="circle"]
+        edge [style="dashed",minlen=3,color="red"];
+        A;
+        B;
+        N;
+    }
+
+    A -> {C, D};
+    B -> {E, F, G};
+    C -> {H, I, J};
+    D -> {K, L, M};
+    N -> B [color=red, style="dashed"];
+    A -> B [color=red, style="dashed"];
+}

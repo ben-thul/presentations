@@ -1,0 +1,9 @@
+digraph {
+    /* splines=ortho; */
+    node [shape="box"];
+
+    A -> {B, C, D};
+    B -> {E, F, G};
+    C -> {H, I, J}
+    D -> {K, L, M}
+}

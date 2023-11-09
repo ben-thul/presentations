@@ -1,0 +1,18 @@
+digraph {
+    /*splines=ortho;*/
+    node [shape="box"];
+
+    subgraph cycle {
+        rank="same";
+        edge [style="dashed",minlen=3,color="red"];
+        node [color="red", shape="circle"];
+        mclimit=5;
+        A -> N;
+        N -> A;
+    }
+
+    A -> {B, C, D};
+    B -> {E, F, G};
+    C -> {H, I, J}
+    D -> {K, L, M}
+}
